@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CuentaRepository extends CrudRepository<Cuenta, Integer> {
-
+    @Override
+    void deleteById(Integer integer);
 }

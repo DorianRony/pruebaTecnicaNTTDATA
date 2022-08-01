@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+  server:
+    image: pruebatecnica
+    ports:
+      - "8080:8080"
+    environment:
+      - spring.datasource.url=jdbc:mysql://mysqlprueba:3306/basedatos
+    networks:
+      - prueba-mysql
+    depends_on:
+      - mysqlprueba
+
+  mysqlprueba:
+    image: mysql
+    networks:
+      - prueba-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
+      - MYSQL_DATABASE=basedatos
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+networks:
+  prueba-mysql:

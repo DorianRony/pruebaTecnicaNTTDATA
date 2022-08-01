@@ -16,4 +16,7 @@ public interface MovimientoRepository extends CrudRepository<Movimiento, Integer
 
     @Query("select c from movimiento c where c.idCuenta.idCliente = ?1 and c.fecha >= ?2 and c.fecha <= ?3")
     List<Movimiento> movimientosReporte(Cliente cliente, Date fechaInicio, Date fechaFin);
+
+    @Override
+    void deleteById(Integer integer);
 }

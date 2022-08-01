@@ -1,5 +1,6 @@
 package com.ronyreyna.pruebatecnica;
 
+import java.util.Objects;
 import javax.annotation.PostConstruct;
 import com.ronyreyna.pruebatecnica.entity.Cliente;
 import com.ronyreyna.pruebatecnica.entity.Cuenta;
@@ -45,6 +46,11 @@ public class Utils {
     }
 
     public static Cliente mapperCliente(ClienteDTO clienteDTO){
+        if (Objects.isNull(clienteDTO)){
+            System.out.printf("Error null");
+        }else{
+            System.out.printf("no es null");
+        }
         return new Cliente(clienteDTO.getNombre(),clienteDTO.getGenero(), clienteDTO.getEdad(),
             clienteDTO.getIdentificacion(), clienteDTO.getDireccion(),clienteDTO.getTelefono(),clienteDTO.getIdCliente(),clienteDTO.getContrasena(),clienteDTO.getEstado());
     }

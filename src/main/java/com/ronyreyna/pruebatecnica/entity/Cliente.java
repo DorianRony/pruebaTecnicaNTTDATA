@@ -25,7 +25,7 @@ public class Cliente extends Persona{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "clienteid")
-    private int idCliente;
+    private Integer idCliente;
 
     @Column(name = "contrasena")
     private String contrasena;
@@ -35,7 +35,7 @@ public class Cliente extends Persona{
 
     public Cliente(String nombre, String genero, Integer edad, String identificacion,
         String direccion,
-        String telefono, int idCliente, String contrasena, boolean estado) {
+        String telefono, Integer idCliente, String contrasena, Boolean estado) {
         super(nombre, genero, edad, identificacion, direccion, telefono);
         this.idCliente = idCliente;
         this.contrasena = contrasena;
